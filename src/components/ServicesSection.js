@@ -3,12 +3,20 @@ import diaphragm from "../img/diaphragm.svg";
 import money from "../img/money.svg";
 import teamwork from "../img/teamwork.svg";
 import home2 from "../img/home2.png";
-import { About, Hide, Description, Image } from "../styles";
-import styled from "styled-components";
+import { About, Description, Image } from "../styles";
+import styled from "styled-components/macro";
+import { scrollReveal } from "../animation";
+import { useScroll } from "./useScroll";
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll(0.5);
+
   return (
-    <Services>
+    <Services
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      ref={element}>
       <Description>
         <h2>
           High <span>quality</span> services

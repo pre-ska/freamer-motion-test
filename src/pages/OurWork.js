@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
@@ -8,13 +8,17 @@ import { motion } from "framer-motion";
 import {
   pageAnimation,
   fade,
+  scrollReveal,
   photoAnim,
   sliderContainer,
   lineAnim,
   slider
 } from "../animation";
+import { useScroll } from "../components/useScroll";
 
 const OurWork = () => {
+  const [element, controls] = useScroll(0.3);
+  const [element2, controls2] = useScroll(0.3);
   return (
     <Work
       style={{ background: "#fff" }}
@@ -37,7 +41,7 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie ref={element} variants={fade} animate={controls} initial="hidden">
         <motion.h2 variants={fade}>The Racer</motion.h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to={`/work/the-racer`}>
@@ -46,7 +50,11 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie
+        ref={element2}
+        variants={fade}
+        animate={controls2}
+        initial="hidden">
         <motion.h2 variants={fade}>Good Times</motion.h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to={`/work/good-times`}>
@@ -69,7 +77,7 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
 
   .line {

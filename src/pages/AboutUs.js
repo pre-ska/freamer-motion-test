@@ -10,7 +10,8 @@ const AboutUs = () => {
       variants={pageAnimation}
       initial="hidden"
       exit="exit"
-      animate="show">
+      animate="show"
+      style={{ overflow: "hidden" }}>
       <AboutSection />
       <ServicesSection />
       <FaqSection />
