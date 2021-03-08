@@ -3,6 +3,7 @@ import FaqSection from "../components/FaqSection";
 import ServicesSection from "../components/ServicesSection";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
+import ScrollTop from "../components/ScrollTop";
 
 const AboutUs = () => {
   return (
@@ -10,11 +11,11 @@ const AboutUs = () => {
       variants={pageAnimation}
       initial="hidden"
       exit="exit"
-      animate="show"
-      style={{ overflow: "hidden" }}>
+      animate="show">
       <AboutSection />
       <ServicesSection />
       <FaqSection />
+      <ScrollTop />
     </motion.div>
   );
 };
