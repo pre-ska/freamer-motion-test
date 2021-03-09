@@ -77,6 +77,10 @@ const Work = styled(motion.div)`
   h2 {
     padding: 1rem 0rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const Movie = styled(motion.div)`
@@ -105,20 +109,20 @@ const Frame1 = styled(motion.div)`
   top: 10%;
   width: 100%;
   height: 100vh;
-  background: #fffebf;
+  background: #414141;
   z-index: 2;
 `;
 
 const Frame2 = styled(Frame1)`
-  background: #ff8efb;
+  background: #727272;
 `;
 
 const Frame3 = styled(Frame1)`
-  background: #8ed2ff;
+  background: #a3a3a3;
 `;
 
 const Frame4 = styled(Frame1)`
-  background: #8effe0;
+  background: #e4e4e4;
 `;
 
 export default OurWork;

@@ -6,7 +6,7 @@ export const useScroll = margin => {
 
   //treshold je dio ciljanog elementa, kada margin (0.25 i 0.5) bude u view
   //započni animaciju
-  const [element, view] = useInView({ threshold: margin });
+  const [element, view] = useInView({ threshold: 0.1 });
 
   if (view) {
     controls.start("show");

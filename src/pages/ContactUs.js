@@ -44,7 +44,12 @@ const ContactStyle = styled(motion.div)`
   background: #fff;
   padding: 5rem 10rem;
   color: #353535;
-  min-height: 90vh;
+  min-height: 150vh;
+
+  @media (max-width: 960px) {
+    padding: 2rem;
+    font-size: 1rem;
+  }
 `;
 
 const Title = styled.div`
@@ -58,16 +63,22 @@ const Hide = styled.div`
 
 const Circle = styled.div`
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  width: 1rem;
+  height: 1rem;
   background: #353535;
+
+  @media (max-width: 960px) {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 `;
 
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;
+
   h2 {
-    margin: 2rem;
+    margin: 1rem;
   }
 `;
 
