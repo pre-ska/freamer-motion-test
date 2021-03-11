@@ -20,8 +20,13 @@ export const Description = styled.div`
   flex: 1;
   z-index: 2;
   padding-right: 5rem;
+
   h2 {
     font-weight: lighter;
+  }
+
+  button {
+    margin-bottom: 2rem;
   }
 
   @media (max-width: 1300px) {
